@@ -1,7 +1,10 @@
     plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
-}
+        id 'kotlin-kapt'
+        id 'com.google.dagger.hilt.android'
+
+    }
 
 android {
     namespace 'com.gaby.examplemvvm'
@@ -61,5 +64,11 @@ dependencies {
     //Corrutinas
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.6'
 
+    implementation "com.google.dagger:hilt-android:2.44"
+    kapt "com.google.dagger:hilt-compiler:2.44"
 
 }
+
+    kapt {
+        correctErrorTypes true
+    }
